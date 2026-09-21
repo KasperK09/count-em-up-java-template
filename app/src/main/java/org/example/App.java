@@ -17,3 +17,35 @@ public class App {
       System.out.println(new App().getGreeting());
   }
 }
+
+/*GroceryCounter counter = new GroceryCounter();
+ 
+System.out.println(counter.total()); // This would print out $0.00
+ 
+counter.tens();
+counter.tens();
+counter.hundreths();
+ 
+System.out.println(counter.total()); // This would print out $20.01
+System.out.println(counter.overflows()); // This would print out 0
+ 
+for(int i = 0; i < 35; i++) {
+  counter.ones();
+}
+ 
+System.out.println(counter.total()); // This would print out $55.01
+System.out.println(counter.overflows()); // This would print out 0
+ 
+for(int i = 0; i < 100; i++) {
+  counter.ones();
+}
+ 
+System.out.println(counter.total()); // This would print out $55.01
+System.out.println(counter.overflows()); // This would print out 1
+ 
+counter.clear();
+ 
+System.out.println(counter.total()); // This would print out $0.00
+System.out.println(counter.overflows()); // This would print out 0
+ */
+//example
