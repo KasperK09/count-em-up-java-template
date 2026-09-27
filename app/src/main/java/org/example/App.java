@@ -68,66 +68,35 @@ public class App {
     }
     public static void main(String[] args) {
 
+      //example driver program with fixed inputs since you don't have to add user inputs to this assignment
         GroceryCounter counter = new GroceryCounter();
-
-        System.out.println(counter.total());
-
-        counter.tens();
-        counter.tens();
-        counter.hundreths();
-
-        System.out.println(counter.total());
-        System.out.println(counter.overflows());
-
-        for (int i = 0; i < 35; i++) {
-            counter.ones();
-        }
-
-        System.out.println(counter.total());
-        System.out.println(counter.overflows());
-
-        for (int i = 0; i < 100; i++) {
-            counter.ones();
-        }
-
-        System.out.println(counter.total());
-        System.out.println(counter.overflows());
-
-        counter.clear();
-
-        System.out.println(counter.total());
-        System.out.println(counter.overflows());
+      
+      System.out.println(counter.total()); // This would print out $0.00
+      
+      counter.tens();
+      counter.tens();
+      counter.hundreths();
+      
+      System.out.println(counter.total()); // This would print out $20.01
+      System.out.println(counter.overflows()); // This would print out 0
+      
+      for(int i = 0; i < 35; i++) {
+        counter.ones();
+      }
+      
+      System.out.println(counter.total()); // This would print out $55.01
+      System.out.println(counter.overflows()); // This would print out 0
+      
+      for(int i = 0; i < 100; i++) {
+        counter.ones();
+      }
+      
+      System.out.println(counter.total()); // This would print out $55.01
+      System.out.println(counter.overflows()); // This would print out 1
+      
+      counter.clear();
+      
+      System.out.println(counter.total()); // This would print out $0.00
+      System.out.println(counter.overflows()); // This would print out 0
     }
 }
-
-/*GroceryCounter counter = new GroceryCounter();
- 
-System.out.println(counter.total()); // This would print out $0.00
- 
-counter.tens();
-counter.tens();
-counter.hundreths();
- 
-System.out.println(counter.total()); // This would print out $20.01
-System.out.println(counter.overflows()); // This would print out 0
- 
-for(int i = 0; i < 35; i++) {
-  counter.ones();
-}
- 
-System.out.println(counter.total()); // This would print out $55.01
-System.out.println(counter.overflows()); // This would print out 0
- 
-for(int i = 0; i < 100; i++) {
-  counter.ones();
-}
- 
-System.out.println(counter.total()); // This would print out $55.01
-System.out.println(counter.overflows()); // This would print out 1
- 
-counter.clear();
- 
-System.out.println(counter.total()); // This would print out $0.00
-System.out.println(counter.overflows()); // This would print out 0
- */
-//example

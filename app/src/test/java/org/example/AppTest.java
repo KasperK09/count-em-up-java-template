@@ -16,6 +16,7 @@ class AppTest {
   //   assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
   // }
 
+    //tests if the counter starts correctly at 0
     @Test
     void counterStartsAtZero() {
         App.GroceryCounter counter = new App.GroceryCounter();
@@ -24,6 +25,7 @@ class AppTest {
         assertEquals(0, counter.overflows());
     }
 
+    //test if the counter correctly increments by 10$
     @Test
     void tensIncrementsByTenDollars() {
         App.GroceryCounter counter = new App.GroceryCounter();
@@ -33,6 +35,7 @@ class AppTest {
         assertEquals("$10.00", counter.total());
     }
 
+    //tests if the counter works correctly when incrementing by 1$
     @Test
     void onesIncrementsByOneDollar() {
         App.GroceryCounter counter = new App.GroceryCounter();
@@ -42,6 +45,7 @@ class AppTest {
         assertEquals("$1.00", counter.total());
     }
 
+    //tests if the counter works correctly when incrementing by 10 cents
     @Test
     void tenthsIncrementsByTenCents() {
         App.GroceryCounter counter = new App.GroceryCounter();
@@ -51,6 +55,7 @@ class AppTest {
         assertEquals("$0.10", counter.total());
     }
 
+    //tests if the counter works correctly when incrementing by 1 cent
     @Test
     void hundrethsIncrementsByOneCent() {
         App.GroceryCounter counter = new App.GroceryCounter();
@@ -60,6 +65,7 @@ class AppTest {
         assertEquals("$0.01", counter.total());
     }
 
+    //tets if the counter works corretly when incremented by mulitple and different counters
     @Test
     void multipleButtonsWorkTogether() {
         App.GroceryCounter counter = new App.GroceryCounter();
@@ -72,6 +78,7 @@ class AppTest {
         assertEquals(0, counter.overflows());
     }
 
+    //tests if the counter will overflow (1)
     @Test
     void counterOverflows() {
         App.GroceryCounter counter = new App.GroceryCounter();
@@ -84,6 +91,7 @@ class AppTest {
         assertEquals(1, counter.overflows());
     }
 
+    //tests if counter.clear will clear the counter
     @Test
     void clearResetsCounter() {
         App.GroceryCounter counter = new App.GroceryCounter();
@@ -99,6 +107,7 @@ class AppTest {
         assertEquals(0, counter.overflows());
     }
 
+    //tests if clear still works even when the counter is overflowed
     @Test
     void clearResetsOverflowCount() {
         App.GroceryCounter counter = new App.GroceryCounter();
