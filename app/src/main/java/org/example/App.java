@@ -67,6 +67,7 @@ public class App {
         }
     }
     public static void main(String[] args) {
+
         GroceryCounter counter = new GroceryCounter();
 
         System.out.println(counter.total());

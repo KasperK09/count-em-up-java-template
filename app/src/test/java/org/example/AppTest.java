@@ -10,9 +10,106 @@ class AppTest {
 
   // This is a sample test to show you how everything works
   // You should delete this file / test and then implement your own
-  @Test
-  void appHasAGreeting() {
-    App classUnderTest = new App();
-    assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
-  }
+  // @Test
+  // void appHasAGreeting() {
+  //   App classUnderTest = new App();
+  //   assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+  // }
+
+    @Test
+    void counterStartsAtZero() {
+        App.GroceryCounter counter = new App.GroceryCounter();
+
+        assertEquals("$0.00", counter.total());
+        assertEquals(0, counter.overflows());
+    }
+
+    @Test
+    void tensIncrementsByTenDollars() {
+        App.GroceryCounter counter = new App.GroceryCounter();
+
+        counter.tens();
+
+        assertEquals("$10.00", counter.total());
+    }
+
+    @Test
+    void onesIncrementsByOneDollar() {
+        App.GroceryCounter counter = new App.GroceryCounter();
+
+        counter.ones();
+
+        assertEquals("$1.00", counter.total());
+    }
+
+    @Test
+    void tenthsIncrementsByTenCents() {
+        App.GroceryCounter counter = new App.GroceryCounter();
+
+        counter.tenths();
+
+        assertEquals("$0.10", counter.total());
+    }
+
+    @Test
+    void hundrethsIncrementsByOneCent() {
+        App.GroceryCounter counter = new App.GroceryCounter();
+
+        counter.hundreths();
+
+        assertEquals("$0.01", counter.total());
+    }
+
+    @Test
+    void multipleButtonsWorkTogether() {
+        App.GroceryCounter counter = new App.GroceryCounter();
+
+        counter.tens();
+        counter.tens();
+        counter.hundreths();
+
+        assertEquals("$20.01", counter.total());
+        assertEquals(0, counter.overflows());
+    }
+
+    @Test
+    void counterOverflows() {
+        App.GroceryCounter counter = new App.GroceryCounter();
+
+        for (int i = 0; i < 10000; i++) {
+            counter.hundreths();
+        }
+
+        assertEquals("$0.00", counter.total());
+        assertEquals(1, counter.overflows());
+    }
+
+    @Test
+    void clearResetsCounter() {
+        App.GroceryCounter counter = new App.GroceryCounter();
+
+        counter.tens();
+        counter.ones();
+        counter.tenths();
+        counter.hundreths();
+
+        counter.clear();
+
+        assertEquals("$0.00", counter.total());
+        assertEquals(0, counter.overflows());
+    }
+
+    @Test
+    void clearResetsOverflowCount() {
+        App.GroceryCounter counter = new App.GroceryCounter();
+
+        for (int i = 0; i < 10000; i++) {
+            counter.hundreths();
+        }
+
+        counter.clear();
+
+        assertEquals(0, counter.overflows());
+        assertEquals("$0.00", counter.total());
+    }
 }
